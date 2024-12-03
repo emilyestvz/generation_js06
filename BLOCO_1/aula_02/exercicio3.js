@@ -15,5 +15,5 @@ const salarioLiquido = new Intl.NumberFormat("pt-BR", {
 // Calculando o salário líquido
 
 //let salarioLiquido = salarioBruto + adcNoturno + (hExtras * 5) - descontos;
-
+ 
 console.log("\nCalculado do Salário Líquido: ", salarioLiquido);
