@@ -16,3 +16,4 @@ if (calcularMedia >= 7) {
 } else {
   console.log("\nVocê foi reprovado. ⚠");
 }
+ 
