@@ -1,3 +1,5 @@
+// Elabore um algoritmo que leia o Salário Bruto, o Adicional Noturno, as Horas Extras e os Descontos de um Colaborador e exiba na tela o Salário Líquido. 
+
 const leia = require("readline-sync");
 
 let salarioBruto = leia.questionFloat("Digite o Salario Bruto: ");
