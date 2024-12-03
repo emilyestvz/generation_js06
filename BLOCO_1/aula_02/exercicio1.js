@@ -10,4 +10,4 @@ const novoSalario = new Intl.NumberFormat("pt-BR", {
   currency: "BRL",
 }).format(Salario + abono);
 
-console.log("Seu novo salario com o abono incluso é: ", novoSalario);
+console.log("Seu novo salario com o abono incluso é: ", novoSalario); 
