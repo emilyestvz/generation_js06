@@ -79,4 +79,6 @@ if (primeiraPalavra === "Invertebrado" || primeiraPalavra === "invertebrado") {
       console.log("\nVocê não escolheu uma opção válida. Tente novamente.");
     }
   }
+} else {
+  console.log("Animal não encontrado. Tente novamente!");
 }
