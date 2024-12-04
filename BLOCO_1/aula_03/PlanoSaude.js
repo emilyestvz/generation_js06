@@ -26,3 +26,4 @@ if(idade <= 0){
 }
 
 console.log(`\nVocê pagará R$ ${valor.toFixed(2)} reais por ano.`);
+
