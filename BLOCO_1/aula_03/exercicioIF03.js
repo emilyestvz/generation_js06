@@ -5,23 +5,24 @@ const leia = require("readline-sync");
 let nomeDoador = leia.question("Digite o nome do doador: ");
 let idade = leia.questionInt("Digite a sua idade: ");
 
-let pergunta = leia.question("Ja fez outras doacoes de sangue? (sim/nao): ");
+let pergunta = leia.keyInYNStrict("Ja fez outras doacoes de sangue? ");
 
 if (idade <= 17 || idade >= 70) {
   console.log("\nDoador não apto para fazer doações.");
+
 } else if (idade >= 60) {
   let sim = true;
   let nao = false;
-  console.log("\n1. Sim \n2. Não");
 
-  if (pergunta === 1) {
+  if (pergunta === sim) {
     console.log(`\n${nomeDoador} está apto(a) para doar sangue!`);
-  } else if (pergunta == 2) {
+  } else if (pergunta == nao) {
     console.log(`\n${nomeDoador} não está apto(a) para doar sangue!`);
   } else {
     console.log("Opção inválida!");
     process.exit(0);
   }
+
 } else {
   console.log(`\n${nomeDoador} está apto(a) para doar sangue!`);
 }
