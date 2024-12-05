@@ -30,7 +30,6 @@ while(continua === 'S') {
     }
 
     continua = leia.question('Deseja continuar? (S/N) ').toUpperCase(); //letras maisculas
-
 }
 
 console.log(`Total de pessoas que gostam de futebol: ${futebol}
