@@ -4,39 +4,48 @@
 - A Soma de todos os elementos da Diagonal Principal
 - A Soma de todos os elementos da Diagonal Secundária*/
 
-const leia = require('readline-sync');
+const leia = require("readline-sync");
 
 let matriz = new Array(3);
 
-console.log(`\n================= MATRIZ =====================`);
+console.log(`====================== MATRIZ ============================`)
 
-// Coluna da matriz
-for(let i = 0; i < matriz.length; i++) {
-    matriz[i] = Array(3);
+
+for (let indice = 0; indice < 3; indice++) {
+    matriz[indice] = new Array(3);
 }
 
-for(let iLinha = 0; iLinha < matriz.length; iLinha++) {
-    for(let iColuna = 0; iColuna < matriz.length; iColuna++) {
-        matriz[iLinha][iColuna] = leia.questionInt(`\nDigite o valor da posicao: `);
+let diagonalP = "";
+let diagonalS = "";
+let somaDiagonalP = 0;
+let somaDiagonalS = 0;
+
+// iterar pela matriz
+for (let indiceLinha = 0; indiceLinha < 3; indiceLinha++) {
+    for (let indiceColuna = 0; indiceColuna < 3; indiceColuna++) {
+        matriz[indiceLinha][indiceColuna] = leia.questionInt('Digite um numero: ');
+
+        // elementos da diagonal principal (sendo linha == coluna)
+        if (indiceLinha === indiceColuna) {
+            diagonalP += matriz[indiceLinha][indiceColuna] + " ";
+            somaDiagonalP += matriz[indiceLinha][indiceColuna];
+        }
+
+        // elementos da diagonal secundária sendo linha + coluna == tamanho da matriz - 1
+        if (indiceLinha + indiceColuna === matriz.length - 1) {
+            
+            // garantia
+            if (matriz[indiceLinha] && matriz[indiceLinha][indiceColuna]) {
+                diagonalS += matriz[indiceLinha][indiceColuna] + " ";
+                somaDiagonalS += matriz[indiceLinha][indiceColuna];
+            }
+        }
     }
 }
 
-for(let i = 0; i < iLinha; i++){
-    soma += numero;
-
-    somaP += matriz[i][i];
-    elementosP += matriz [i][i];
-
-    somaP += matriz[i][2 - i];
-    elementosP[i] = matriz [i][2 - i];
-}
-
-console.log(`\n============================================`);
-
-//visualizando a matriz e preenchendo dados
-console.table(matriz);
-console.log(`\nElementos da Diagonal Principal: ${elementosP}
-    \nElementos da Diagonal Secundária: ${elementosP}
-    \nSoma dos Elementos da Diagonal Principal: ${somaP}
-    \nSoma dos Elementos da Diagonal Secundária: ${somaP}
-    `)
+// Exibir os resultados
+console.log(`============================================================`)
+console.log("Elementos da Diagonal Principal: " + diagonalP);
+console.log("Elementos da Diagonal Secundária: " + diagonalS);
+console.log("Soma da Diagonal Principal: " + somaDiagonalP);
+console.log("Soma da Diagonal Secundária: " + somaDiagonalS);
