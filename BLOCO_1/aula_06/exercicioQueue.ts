@@ -20,7 +20,7 @@ do {
     console.log(`
         \t1 - Adicionar Cliente na fila
         \t2 - Listar todos os Clientes
-        \t3 - Chamar (retirar) um Cliente da fila
+        \t3 - Chamar um Cliente da fila
         \t0 - Sair
         `)
     console.log(`=#=`.repeat(20));
@@ -32,10 +32,10 @@ do {
         const nome = readlinesync.question('\nDigite o seu nome: ');
 
         fila.enqueue(nome);
-        console.log(`\nPaciente ${nome} adicionado com sucesso!`);
+        console.log(`\nCliente ${nome} adicionado com sucesso!`);
 
     } else if(opcao === 2) {
-        console.log(`\nPacientes na fila de espera: `);
+        console.log(`\nClientes na fila de espera: `);
             fila.printQueue();
 
     } else if(opcao === 3) {
