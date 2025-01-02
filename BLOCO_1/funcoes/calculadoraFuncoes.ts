@@ -1,4 +1,6 @@
-import readlinesync = require('readline-sync');
+
+import * as readlinesync from 'readline-sync';//+
+
 import {colors} from "./../util/cores"
 
 let numero1: number;
