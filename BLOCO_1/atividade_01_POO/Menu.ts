@@ -1,11 +1,16 @@
+import * as readlinesync from 'readline-sync';
 import { colors } from '../util/cores';
-import readlinesync from 'readline-sync';
+import { PessoaFisica } from './model/PessoaFisica';
+import { PessoaJuridica } from './model/PessoaJuridica';
+import { ClienteController } from './controller/ClienteController';
+
 
 export function main() {
     let id, opcao, tipo: number;
     let nome, cnpj, cpf, telefone, endereco, sexo, inscricaoEstadual, razaoSocial: string;
-
     const tipoDeCliente = ['Pessoa Fisica', 'Pessoa Juridica'];
+    
+    const clientes = new ClienteController();
 
 
     while(true) {
@@ -28,11 +33,31 @@ export function main() {
             process.exit(0);
         }
 
-        
+
         switch(opcao) {
             case 1:
-                inserirCliente();
+                tipo = readlinesync.keyInSelect(tipoDeCliente, 'Digite o tipo do cliente (1 - Pessoa Fisica, 2 - Pessoa Juridica): ', {cancel:false}) + 1;
+
+                switch(tipo){
+                    case 1:
+                        nome = readlinesync.question('Digite o nome: ');
+                        cpf = readlinesync.question('Digite o CPF: ');
+                        sexo = readlinesync.question('Digite o sexo (M - Masculino, F - Feminino): ');
+                        endereco = readlinesync.question('Digite o endereço: ');
+                        telefone = readlinesync.question('Digite o telefone: ');
+
+                        const dataNasc = readlinesync.question('Informe sua data de nascimento (aa/aa/aaaa): ');
+                        const [dia, mes, ano] = dataNasc.split('/').map(Number);
+                        const data = new Date(ano, mes - 1, dia);
+
+                        if(isNaN(dataNasc.getTime())){
+                            
+                        }
+                }
+
                 break;
+
+
             case 2:
                 listarClientes();
                 break;
@@ -53,7 +78,7 @@ export function main() {
     }
 }
 
-// funções
+
 function about() {
     console.log(colors.fg.blackstrong, 
         `\n✨ Criado por Emily Cristiny Dias
