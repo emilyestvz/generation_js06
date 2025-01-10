@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "hello-world",
   "version": "0.0.1",
   "description": "",
@@ -65,5 +66,23 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+=======
+  "dependencies": {
+    "@types/node": "^22.10.1",
+    "readline-sync": "^1.4.10"
+  },
+  "name": "generation-js06",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/readline-sync": "^1.4.8"
+>>>>>>> 9e43a1c816313fae587366ef2897d1af17046db8
   }
 }
