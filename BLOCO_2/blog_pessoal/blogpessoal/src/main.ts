@@ -6,6 +6,9 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // mandando uma variavel de ambiente (Tz) dizendo q estamos em um horário -03:00
+  process.env.TZ = '-03:00';
+
   // habilitando globalmente a validção de dados
   app.useGlobalPipes(new ValidationPipe());
 
