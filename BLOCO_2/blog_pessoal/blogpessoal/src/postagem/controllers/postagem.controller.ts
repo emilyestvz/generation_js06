@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPip
 import { PostagemService } from "../services/postagem.service";
 import { Postagem } from "../entities/postagem.entity";
 
+// MÉTODOS CRUD
 @Controller('/postagens')
 export class PostagemController {
 
@@ -9,7 +10,8 @@ export class PostagemController {
         private readonly postagemService: PostagemService
     ){}
 
-    // métodos de CRUD
+    /*Se alguém fizer uma requisição GET /postagens, 
+    o método findAll() será chamado e retornará os dados do banco.*/
     @Get()
     @HttpCode(HttpStatus.OK)
     findall(): Promise<Postagem[]>{
